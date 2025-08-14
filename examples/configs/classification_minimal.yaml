@@ -1,0 +1,9 @@
+task: classification
+data: /abs/path/to/classification_dataset
+models: [mobilenet_v3_small, mobilenet_v2]
+epochs: 5
+img_size: 224
+batch_size: 32
+export: [onnx]
+project_dir: runs
+name: cls_min

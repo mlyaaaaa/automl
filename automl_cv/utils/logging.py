@@ -1,0 +1,16 @@
+from rich.console import Console
+from rich.logging import RichHandler
+import logging
+
+_console = Console()
+
+
+def get_logger(name: str = "automl_cv") -> logging.Logger:
+	logging.basicConfig(
+		level=logging.INFO,
+		format="%(message)s",
+		handlers=[RichHandler(console=_console, rich_tracebacks=True)]
+	)
+	logger = logging.getLogger(name)
+	logger.setLevel(logging.INFO)
+	return logger
